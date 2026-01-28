@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mi_ia_local
+    ports:
+      - "11434:11434" # Puerto estándar de la API de Ollama
+    volumes:
+      - ./ollama_data:/root/.ollama # Persistencia: guarda el modelo para no descargarlo siempre
+    environment:
+      - OLLAMA_ORIGINS=* # ¡CRÍTICO! Permite peticiones desde la web (CORS)
+    restart: always

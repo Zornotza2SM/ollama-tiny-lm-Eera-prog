@@ -53,7 +53,7 @@ services:
 Una vez creado, levanta el servicio desde la terminal:
 
 ```bash
-docker-compose up -d
+docker-compose up -de
 
 ```
 
